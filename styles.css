@@ -1,0 +1,228 @@
+/* Week 2: CSS Mastery */
+
+/* 1. Reset and box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #243047;
+  background-color: #f7f8fc;
+}
+
+/* 2. Typography and colour system */
+:root {
+  --color-primary: #234e70;
+  --color-accent: #e07a5f;
+  --color-text: #243047;
+  --color-background: #f7f8fc;
+  --color-surface: #ffffff;
+  --color-border: #d8dee8;
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --space-small: 0.5rem;
+  --space-medium: 1rem;
+  --space-large: 2rem;
+
+  --content-width: 1100px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: var(--space-medium);
+}
+
+p,
+ul {
+  margin-bottom: var(--space-medium);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* 3. Shared page layout */
+header,
+main,
+footer {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+header {
+  padding-block: var(--space-large);
+}
+
+main {
+  padding-block: var(--space-large);
+}
+
+section {
+  margin-bottom: var(--space-large);
+}
+
+footer {
+  padding-block: var(--space-large);
+  border-top: 1px solid var(--color-border);
+}
+
+/* 4. Navigation using Flexbox */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-medium);
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--space-small);
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* 5. Images and project cards */
+figure {
+  margin-bottom: var(--space-large);
+}
+
+figcaption {
+  padding-top: var(--space-small);
+  color: #526176;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-large);
+}
+
+.project-card {
+  padding: var(--space-medium);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 0.25rem;
+  margin-bottom: var(--space-medium);
+}
+
+/* 6. Forms */
+form {
+  max-width: 650px;
+}
+
+fieldset {
+  padding: var(--space-medium);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-top: var(--space-medium);
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #9aa7b8;
+  border-radius: 0.25rem;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+button {
+  margin-top: var(--space-medium);
+  padding: 0.7rem 1rem;
+  color: white;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* 7. Tablet: two project columns */
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  nav ul {
+    gap: var(--space-large);
+  }
+}
+
+/* 8. Desktop: three project columns */
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
