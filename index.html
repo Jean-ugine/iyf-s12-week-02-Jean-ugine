@@ -4,32 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eugine's web development portfolio, projects, learning journey, and contact information.">
     <title>Eugine | My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <h1>Eugine</h1>
+    <header class="site-header">
+        <div class="header-content">
+            <a class="site-logo" href="index.html">Eugine</a>
 
-        <p>
-            Learning the syntax. Building the logic.
-            Debugging the unknown. Just getting started—
-            one commit at a time.
-        </p>
-
-        <nav>
-            <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Welcome to my portfolio</p>
+
+                <h1 id="hero-title">Learning, Building, and Growing</h1>
+
+                <p>
+                    Learning the syntax. Building the logic.
+                    Debugging the unknown. Just getting started—
+                    one commit at a time.
+                </p>
+
+                <p>
+                    I am Eugine, a beginner web developer learning
+                    HTML, CSS, and JavaScript through practical projects.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button" href="projects.html">Explore My Projects</a>
+                    <a class="button button-secondary" href="about.html">About Me</a>
+                </div>
+            </div>
+
+            <figure class="hero-image">
+                <img
+                    src="IMG-20260925-WA0052(1).jpg"
+                    alt="A moment from Eugine's learning journey at IYF">
+                <figcaption>Every project is another step forward.</figcaption>
+            </figure>
+        </section>
+
+        <section id="about" class="content-section">
             <h2>About Me</h2>
             <p>
                 I am Eugine, a beginner web developer learning how to build
@@ -39,73 +66,74 @@
                 I enjoy learning new things, solving problems, and turning
                 ideas into something people can use.
             </p>
+            <p><a href="about.html">Read more about me</a></p>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
+        <section id="projects" class="content-section">
+            <h2>My Learning Projects</h2>
             <p>
-                I am currently learning web development and building my first
-                projects as part of the IYF Weekend Academy.
+                I am building my web development skills through practical
+                exercises and projects as part of the IYF Weekend Academy.
             </p>
-            <p>
-                Visit the <a href="projects.html">Projects page</a> to explore
-                my work.
-            </p>
+            <p><a href="projects.html">Visit my Projects page</a></p>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me through my email:</p>
-            <p><a href="mailto:euginealulu@gmail.com">Email Me</a></p>
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+            <p>You can reach me by email or use the form below.</p>
+            <p><a href="mailto:euginealulu@gmail.com">euginealulu@gmail.com</a></p>
 
-            <form action="mailto:euginealulu@gmail.com" method="post"
+            <form action="mailto:euginealulu@gmail.com"
+                  method="post"
                   enctype="text/plain">
                 <fieldset>
                     <legend>Send me a message</legend>
 
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5"
-                              required></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
 
                     <button type="submit">Send Message</button>
                 </fieldset>
             </form>
-            <p>Note: Sending this form depends on your device having an email app configured.</p>
+
+            <p class="form-note">
+                Note: Sending this form depends on your device having
+                a compatible email application configured.
+            </p>
         </section>
 
-        <section id="gallery">
+        <section id="gallery" class="content-section">
             <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="IMG-20260925-WA0052(1).jpg" alt="A view from the IYF campus">
+                    <figcaption>A moment from my journey</figcaption>
+                </figure>
 
-            <figure>
-                <img src="IMG-20260925-WA0052(1).jpg" alt="IYF campus">
-                <figcaption>My first photo</figcaption>
-            </figure>
+                <figure>
+                    <img src="IMG-20260925-WA0053(1).jpg" alt="Another moment at the IYF campus">
+                    <figcaption>Learning and growing</figcaption>
+                </figure>
 
-            <figure>
-                <img src="IMG-20260925-WA0053(1).jpg" alt="A moment at the IYF campus">
-                <figcaption>A moment from my journey</figcaption>
-            </figure>
-
-            <figure>
-                <img src="IMG-20260925-WA0055%20(1).jpg" alt="Learning and growing at IYF">
-                <figcaption>Learning and growing</figcaption>
-            </figure>
+                <figure>
+                    <img src="IMG-20260925-WA0055%20(1).jpg" alt="A memory from my time at IYF">
+                    <figcaption>Building new experiences</figcaption>
+                </figure>
+            </div>
         </section>
 
-        <section id="blog">
-            <h2>Blog</h2>
+        <section id="blog" class="content-section">
+            <h2>My Learning Journal</h2>
 
-            <article>
-                <header>
-                    <h3>My Web Development Journey</h3>
-                    <p>My first steps into web development</p>
-                </header>
+            <article class="journal-card">
+                <h3>My Web Development Journey</h3>
+                <p class="journal-subtitle">My first steps into web development</p>
 
                 <p>
                     I am learning how websites are built using HTML, CSS,
@@ -113,16 +141,218 @@
                     and I am excited to keep learning and building new projects.
                 </p>
 
-                <footer>
-                    <p>Written by Eugine</p>
-                </footer>
+                <p>Written by Eugine</p>
             </article>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Eugine. Built while learning web development.</p>
     </footer>
 </body>
 </html>
-```
+
+/* Homepage layout */
+
+.site-header {
+    padding: 16px 20px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.site-logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero,
+.content-section,
+.site-footer {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px 20px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+}
+
+.hero h1 {
+    margin-top: 0;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.hero-eyebrow {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button,
+button {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.button:hover,
+button:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.button:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.hero-image {
+    margin: 0;
+    min-width: 0;
+}
+
+.hero-image img,
+.gallery-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero-image figcaption,
+.gallery-grid figcaption {
+    margin-top: 8px;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid figure {
+    margin: 0;
+    min-width: 0;
+}
+
+.content-section {
+    overflow-wrap: anywhere;
+}
+
+.content-section form {
+    max-width: 650px;
+    margin-top: 20px;
+}
+
+.content-section fieldset {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.content-section input,
+.content-section textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font: inherit;
+}
+
+.content-section textarea {
+    resize: vertical;
+}
+
+.form-note,
+.journal-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.journal-card {
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: var(--color-surface);
+}
+
+.site-footer {
+    border-top: 1px solid var(--color-border);
+}
+
+/* Tablet layout */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+    .hero {
+        gap: 48px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
