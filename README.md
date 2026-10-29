@@ -25,9 +25,9 @@ This repository contains my Week 1 web development assignment for IYF Weekend Ac
 - Git and GitHub
 - GitHub Pages
 
-## Live Website
+## Live Demo
 
-Visit the published portfolio: https://jean-ugine.github.io/iyf-s12-week-01-Jean-ugine/
+[View my live portfolio website](https://jean-ugine.github.io/iyf-s12-week-02-Jean-ugine/)
 
 ## What I Learned
 
