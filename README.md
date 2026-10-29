@@ -32,6 +32,7 @@ This repository contains my Week 1 web development assignment for IYF Weekend Ac
 ## What I Learned
 
 I am practising how to structure web pages, connect pages using links, document my learning, inspect websites using browser tools, and consider accessibility.
+I also practised the CSS box model, responsive layouts with Flexbox and Grid, accessible keyboard navigation, and documenting my daily CSS challenges.
 
 ## Future Improvements
 
