@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,47 +24,134 @@
         <section>
             <h2>Understanding the CSS Box Model</h2>
             <p>
-                Every HTML element is represented as a box. The CSS box model
-                consists of content, padding, border, and margin.
+                Every HTML element is represented as a box.
+                The CSS box model consists of content, padding,
+                border, and margin.
             </p>
         </section>
 
         <section>
-            <h2>1. Content-box example</h2>
+            <h2>1. Content-box Example</h2>
             <p>
-                With content-box, the declared width applies to the content.
-                Padding and borders add to the total width.
+                With content-box, the declared width applies to
+                the content. Padding and borders increase the
+                total width.
             </p>
+
             <div class="box-model-demo content-box-demo">
                 <p class="box-model-label">Content-box</p>
-                <p>Width: 250px</p>
+                <p>Content width: 200px</p>
                 <p>Padding: 20px</p>
                 <p>Border: 5px</p>
             </div>
         </section>
 
         <section>
-            <h2>2. Border-box example</h2>
+            <h2>2. Border-box Example</h2>
             <p>
-                With border-box, the declared width includes the content,
-                padding, and border.
+                With border-box, the declared width includes
+                the content, padding, and border.
             </p>
+
             <div class="box-model-demo border-box-demo">
                 <p class="box-model-label">Border-box</p>
-                <p>Width: 250px total</p>
+                <p>Total width: 200px</p>
                 <p>Padding: 20px</p>
                 <p>Border: 5px</p>
             </div>
         </section>
 
         <section>
-            <h2>What I learned</h2>
+            <h2>3. Four Parts of the Box Model</h2>
+            <p>
+                The outer layer is margin, followed by border,
+                padding, and the content area in the centre.
+            </p>
+
+            <div class="box-model-visual">
+                <div class="margin-layer">
+                    <span class="layer-label">Margin</span>
+
+                    <div class="border-layer">
+                        <span class="layer-label">Border</span>
+
+                        <div class="padding-layer">
+                            <span class="layer-label">Padding</span>
+
+                            <div class="content-layer">
+                                Content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Layout Debugging Exercise</h2>
+            <p>
+                Imagine a card that should fit inside a 300px-wide
+                container. If its content width is 300px and it
+                also has 20px padding on each side and a 5px
+                border on each side, its total width becomes
+                350px. This can cause overflow.
+            </p>
+
+            <div class="debug-container">
+                <div class="debug-card">
+                    <p class="box-model-label">Before fixing</p>
+                    <p>Content width: 300px</p>
+                    <p>Padding: 20px per side</p>
+                    <p>Border: 5px per side</p>
+                </div>
+            </div>
+
+            <p>
+                To fix the problem, use box-sizing: border-box
+                and max-width: 100% so the card can fit within
+                its container.
+            </p>
+
+            <div class="debug-container">
+                <div class="debug-card debug-card-fixed">
+                    <p class="box-model-label">After fixing</p>
+                    <p>Maximum width: 300px</p>
+                    <p>Padding and border are included in the width.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Box Model Card</h2>
+            <p>
+                This card demonstrates how width, padding,
+                border, and margin work together in a real layout.
+            </p>
+
+            <article class="box-model-card">
+                <h3>My CSS Learning Journey</h3>
+                <p>
+                    I am learning to create organised,
+                    responsive web pages using HTML and CSS.
+                </p>
+                <p>
+                    Practising the box model helps me control
+                    spacing and prevent layout overflow.
+                </p>
+                <a href="projects.html">View my projects</a>
+            </article>
+        </section>
+
+        <section>
+            <h2>What I Learned</h2>
             <ul>
-                <li>Content is the area where text and images appear.</li>
+                <li>Content is where text and images appear.</li>
                 <li>Padding creates space inside the border.</li>
                 <li>Border surrounds the padding and content.</li>
                 <li>Margin creates space outside the border.</li>
-                <li>Border-box makes element sizing easier to manage.</li>
+                <li>Content-box adds padding and borders to the declared width.</li>
+                <li>Border-box includes padding and borders in the declared width.</li>
+                <li>Max-width can help prevent overflow on smaller screens.</li>
             </ul>
         </section>
     </main>
@@ -74,3 +161,133 @@
     </footer>
 </body>
 </html>
+
+/* Box Model Practice Page */
+
+.box-model-demo {
+    width: 200px;
+    max-width: 100%;
+    padding: 20px;
+    border: 5px solid var(--color-primary);
+    margin: 20px 0;
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+.content-box-demo {
+    box-sizing: content-box;
+}
+
+.border-box-demo {
+    box-sizing: border-box;
+}
+
+/* Labels inside box model examples */
+
+.box-model-label {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Four-part box model visualization */
+
+.box-model-visual {
+    max-width: 100%;
+    margin: 24px 0;
+    padding: 10px;
+    overflow-wrap: anywhere;
+}
+
+.margin-layer {
+    background-color: #f4d6a0;
+    padding: 24px;
+    text-align: center;
+}
+
+.border-layer {
+    background-color: #d97757;
+    padding: 20px;
+}
+
+.padding-layer {
+    background-color: #d8e9c5;
+    padding: 20px;
+}
+
+.content-layer {
+    background-color: #d7e9f7;
+    color: #243047;
+    padding: 24px 10px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.layer-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #243047;
+}
+
+/* Layout debugging exercise */
+
+.debug-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px dashed var(--color-accent);
+    background-color: var(--color-background);
+}
+
+/* Intentionally oversized example to demonstrate the problem */
+.debug-card {
+    box-sizing: content-box;
+    width: 300px;
+    max-width: none;
+    padding: 20px;
+    border: 5px solid var(--color-primary);
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+/* Corrected version that fits its container */
+.debug-card-fixed {
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+}
+
+/* Practical box model card */
+
+.box-model-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    margin: 24px 0;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 12px rgba(36, 48, 71, 0.08);
+    overflow-wrap: anywhere;
+}
+
+.box-model-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+.box-model-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.box-model-card a:hover,
+.box-model-card a:focus-visible {
+    color: var(--color-accent);
+}
+
