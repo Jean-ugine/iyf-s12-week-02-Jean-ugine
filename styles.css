@@ -226,3 +226,26 @@ button:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+/* Box model practice page */
+.box-model-demo {
+    width: 200px;
+    max-width: calc(100% - 50px);
+    padding: 20px;
+    border: 5px solid var(--color-primary);
+    margin: 20px 0;
+    background-color: var(--color-surface);
+}
+
+.content-box-demo {
+    box-sizing: content-box;
+}
+
+.border-box-demo {
+    box-sizing: border-box;
+}
+
+.box-model-label {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
