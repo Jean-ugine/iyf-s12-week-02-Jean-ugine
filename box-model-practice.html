@@ -1,0 +1,100 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Practice | Eugine</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .box-model-demo {
+            width: 250px;
+            max-width: 100%;
+            padding: 20px;
+            border: 5px solid var(--color-primary);
+            margin: 20px 0;
+            background-color: var(--color-surface);
+        }
+
+        .content-box-demo {
+            box-sizing: content-box;
+        }
+
+        .border-box-demo {
+            box-sizing: border-box;
+        }
+
+        .box-model-label {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model Practice</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Understanding the CSS Box Model</h2>
+            <p>
+                Every HTML element is represented as a box. The CSS box model
+                consists of content, padding, border, and margin.
+            </p>
+        </section>
+
+        <section>
+            <h2>1. Content-box example</h2>
+            <p>
+                With content-box, the declared width applies to the content.
+                Padding and borders add to the total width.
+            </p>
+            <div class="box-model-demo content-box-demo">
+                <p class="box-model-label">Content-box</p>
+                <p>Width: 250px</p>
+                <p>Padding: 20px</p>
+                <p>Border: 5px</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Border-box example</h2>
+            <p>
+                With border-box, the declared width includes the content,
+                padding, and border.
+            </p>
+            <div class="box-model-demo border-box-demo">
+                <p class="box-model-label">Border-box</p>
+                <p>Width: 250px total</p>
+                <p>Padding: 20px</p>
+                <p>Border: 5px</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>What I learned</h2>
+            <ul>
+                <li>Content is the area where text and images appear.</li>
+                <li>Padding creates space inside the border.</li>
+                <li>Border surrounds the padding and content.</li>
+                <li>Margin creates space outside the border.</li>
+                <li>Border-box makes element sizing easier to manage.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Eugine. CSS Mastery Practice.</p>
+    </footer>
+</body>
+</html>
